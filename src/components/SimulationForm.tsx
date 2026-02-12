@@ -30,34 +30,34 @@ export default function SimulationForm({ onSubmit }: { onSubmit: (data: any, key
     <form onSubmit={handleSubmit} className="bg-white rounded shadow p-6 mb-6 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
       <div className="flex flex-col">
         <label className="font-medium mb-1">Nome</label>
-        <input name="name" value={form.name} onChange={handleChange} placeholder="Nome" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="name" value={form.name} onChange={handleChange} placeholder="Nome" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex flex-col">
         <label className="font-medium mb-1">Valor inicial</label>
-        <input name="initialAmount" type="number" value={form.initialAmount} onChange={handleChange} placeholder="Valor inicial" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="initialAmount" type="number" value={form.initialAmount} onChange={handleChange} placeholder="Valor inicial" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex flex-col">
         <label className="font-medium mb-1">Aporte mensal</label>
-        <input name="monthlyContribution" type="number" value={form.monthlyContribution} onChange={handleChange} placeholder="Aporte mensal" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="monthlyContribution" type="number" value={form.monthlyContribution} onChange={handleChange} placeholder="Aporte mensal" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex flex-col">
         <label className="font-medium mb-1">Meses</label>
-        <input name="months" type="number" value={form.months} onChange={handleChange} placeholder="Meses" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="months" type="number" value={form.months} onChange={handleChange} placeholder="Meses" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex flex-col">
         <label className="font-medium mb-1">Taxa anual fixa (%)</label>
-        <input name="fixedAnnualRate" type="number" step="0.01" value={form.fixedAnnualRate} onChange={handleChange} placeholder="Taxa anual fixa" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="fixedAnnualRate" type="number" step="0.01" value={form.fixedAnnualRate} onChange={handleChange} placeholder="Taxa anual fixa" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex flex-col">
         <label className="font-medium mb-1">Retorno anual variável (%)</label>
-        <input name="variableAnnualReturn" type="number" step="0.01" value={form.variableAnnualReturn} onChange={handleChange} placeholder="Retorno anual variável" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="variableAnnualReturn" type="number" step="0.01" value={form.variableAnnualReturn} onChange={handleChange} placeholder="Retorno anual variável" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex flex-col">
         <label className="font-medium mb-1">Volatilidade anual (%)</label>
-        <input name="variableVolatility" type="number" step="0.01" value={form.variableVolatility} onChange={handleChange} placeholder="Volatilidade anual" className="input input-bordered rounded px-3 py-2 border border-gray-300" />
+        <input name="variableVolatility" type="number" step="0.01" value={form.variableVolatility} onChange={handleChange} placeholder="Volatilidade anual" className="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
       </div>
       <div className="flex items-end">
-        <button type="submit" disabled={submitting} className="btn bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 disabled:opacity-50 w-full">{submitting ? "Simulando..." : "Simular"}</button>
+        <button type="submit" disabled={submitting} className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 disabled:opacity-50 w-full transition">{submitting ? "Simulando..." : "Simular"}</button>
       </div>
     </form>
   );

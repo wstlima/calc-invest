@@ -40,8 +40,8 @@ export default function Home() {
   useEffect(() => { fetchHistory(); }, []);
 
   return (
-    <div className="p-4">
-      <h1>Calculadora de Investimentos</h1>
+    <div className="p-4 max-w-5xl mx-auto">
+      <h1 className="text-3xl font-bold mb-6 text-blue-800">Calculadora de Investimentos</h1>
       <SimulationForm onSubmit={handleSubmit} />
       <ResultsCards
         fixedNet={result?.fixedFinalNet || selected?.fixedFinalNet}
@@ -55,7 +55,7 @@ export default function Home() {
         variableSeries={result?.variableSeriesJson ? JSON.parse(result.variableSeriesJson) : selected?.variableSeriesJson ? JSON.parse(selected.variableSeriesJson) : []}
       />
       <TaxesTable taxes={taxes} />
-      <h2>Histórico</h2>
+      <h2 className="text-xl font-semibold mt-10 mb-4 text-gray-700">Histórico</h2>
       <HistoryList history={history} onSelect={handleSelect} />
     </div>
   );
