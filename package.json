@@ -1,0 +1,34 @@
+{
+  "name": "calculadora-investimentos",
+  "version": "1.0.0",
+  "description": "Simulador de investimentos Next.js + Prisma + SQLite",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "recharts": "latest",
+    "tailwindcss": "latest",
+    "uuid": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "25.2.3",
+    "@vitest/coverage-v8": "latest",
+    "prisma": "^6.19.2",
+    "typescript": "5.9.3",
+    "vitest": "latest"
+  }
+}
