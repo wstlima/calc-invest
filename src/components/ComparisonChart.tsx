@@ -1,10 +1,31 @@
+"use client";
+import {
+  LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, CartesianGrid
+} from "recharts";
+
+type Point = { month: number; fixed: number; variable: number };
+
 export default function ComparisonChart({ fixedSeries, variableSeries }: { fixedSeries: any[]; variableSeries: any[] }) {
-  // Placeholder: exibe valores finais
+  // Monta dados para o gráfico: um ponto por mês
+  const data: Point[] = (fixedSeries || []).map((f, i) => ({
+    month: i,
+    fixed: f.balance,
+    variable: variableSeries?.[i]?.balance ?? null,
+  }));
+
   return (
-    <div>
-      <h3>Gráfico (placeholder)</h3>
-      <div>Fixo: {fixedSeries?.[fixedSeries.length - 1]?.balance?.toFixed(2)}</div>
-      <div>Variável: {variableSeries?.[variableSeries.length - 1]?.balance?.toFixed(2)}</div>
+    <div className="w-full h-64 bg-white rounded shadow p-2 mb-6">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={data} margin={{ top: 16, right: 24, left: 0, bottom: 8 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="month" tick={{ fontSize: 12 }} label={{ value: 'Mês', position: 'insideBottom', offset: -4 }} />
+          <YAxis tick={{ fontSize: 12 }} label={{ value: 'Saldo', angle: -90, position: 'insideLeft', offset: 10 }} />
+          <Tooltip formatter={(v: number) => v?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} />
+          <Legend verticalAlign="top" height={36} />
+          <Line type="monotone" dataKey="fixed" name="Fixo" stroke="#2563eb" strokeWidth={2} dot={false} />
+          <Line type="monotone" dataKey="variable" name="Variável" stroke="#22c55e" strokeWidth={2} dot={false} />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 }

@@ -2,7 +2,26 @@
 **Arquivo:** `plan-calculadora.md`  
 **Inclui:** arquitetura completa, idempotência (SQLite), diferenciais, snippets coláveis (Prisma/Service/API), testes (Vitest) e **README snippet** com **PROMPTS obrigatórios** para envio junto ao projeto.
 
----
+ ---
+
+## Incrementos sugeridos (UX, Testes, Robustez)
+
+### 10) Incremento de UI (Tailwind, gráficos reais, UX)
+- Instalar e configurar Tailwind CSS
+- Melhorar layout dos componentes (formulário, cards, tabela, histórico)
+- Substituir gráfico placeholder por gráfico real (Recharts)
+- Adicionar feedback visual (loading, erro, sucesso)
+- Melhorar responsividade e acessibilidade
+
+### 11) Testes de API/end-to-end
+- Adicionar testes de API usando Vitest/supertest para endpoints `/api/simulations` e `/api/simulations/[id]`
+- Cobrir casos de sucesso, erro, idempotência e validação
+- (Opcional) Adicionar testes E2E com Playwright ou Cypress para fluxo completo UI+API
+
+### 12) Validação extra de erros de API
+- Melhorar mensagens de erro nos handlers (ex: campos obrigatórios, payload inválido, simulação não encontrada)
+- Padronizar respostas de erro: `{ success: false, error: "Mensagem detalhada" }`
+- Adicionar tratamento para erros inesperados (500)
 
 ## 0) Objetivo e critérios atendidos
 Entregar uma aplicação que:
